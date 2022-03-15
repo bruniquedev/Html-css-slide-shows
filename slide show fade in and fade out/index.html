@@ -1,0 +1,75 @@
+
+
+    <html lang="en">
+    <head>
+    <title>Simplest jQuery Slideshow</title>
+     
+    <style>
+    body {font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+     
+    .fadein { 
+    position:relative; height:332px; width:500px; margin:0 auto;
+    background: url("slideshow-bg.png") repeat-x scroll left top transparent;
+    padding: 10px;
+     }
+    .fadein img { position:absolute; left:10px; top:10px; }
+	
+	
+	
+	
+	 .fadeinContent { 
+    position:relative; height:332px; width:500px; margin:0 auto;
+    background: url("slideshow-bg.png") repeat-x scroll left top transparent;
+    padding: 10px;
+     }
+    
+	
+	.fadeinContent p {  position:absolute; left:10px; top:10px;  }
+	
+	
+	
+    </style>
+     
+	 
+	 <script src="js/jquery.js"></script>
+	 <script src="js/jquery.min.js"></script>
+	 
+    <script>
+   $(function(){
+   
+   	$('.fadeinContent p:gt(0)').hide();
+    	setInterval(function(){$('.fadeinContent :first-child').fadeOut().next('p').fadeIn().end().appendTo('.fadeinContent');}, 6000);
+   
+    	$('.fadein img:gt(0)').hide();
+    	setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 6000);
+		
+	
+    });
+    </script>
+	
+
+	
+	
+     
+    </head>
+    <body>
+    <div class="fadein">
+  <img  src="images/img_rr_01.jpg" style="width: 100%; display: none;" />
+  <img  src="images/img_rr_02.jpg" style="width: 100%; display: none;" />
+  <img  src="images/img_rr_03.jpg" style="width: 100%; display: block;" />
+  <img  src="images/img_rr_04.jpg" style="width: 100%; display: none;" />
+  
+    </div>
+	
+	<div class="fadeinContent">
+	
+	 <p style="width: 100%; display: none;">hello there ,footer 1</p>
+     <p style="width: 100%; display: none;">am footer two did you know</p>
+	 <p style="width: 100%; display: block;">Footer three ,yo kidding</p>
+	 <p style="width: 100%; display: none;">oh men footer four</p>
+    </div>
+	
+	
+	
+    </body>
+    </html>

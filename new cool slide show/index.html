@@ -1,0 +1,82 @@
+ 
+
+    <html lang="en">
+    <head>
+    <title>Simplest jQuery Slideshow</title>
+     
+    <style>
+    body {font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+     
+#slideshow {
+  margin: 80px auto;
+  position: relative;
+  width: 480px;
+  height: 400px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#slideshow > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+	
+    </style>
+     
+	 
+	 <script src="js/jquery.js"></script>
+	 <script src="js/jquery.min.js"></script>
+	 
+    <script>
+ $("#slideshow > div:gt(0)").hide();
+
+setInterval(function() {
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+}, 3000);
+    </script>
+	
+
+	
+	
+     
+    </head>
+    <body>
+	
+	
+	
+
+     <div id="slideshow">
+	 
+   <div>
+      <img  src="images/img_rr_01.jpg"  />
+	  <p >hello there ,footer 1</p>
+   </div>
+   
+   <div>
+     <img  src="images/img_rr_02.jpg"  />
+	 <p >am footer two did you know</p>
+   </div>
+   
+   <div>
+     <img  src="images/img_rr_04.jpg"  />
+	 <p >Footer three ,yo kidding</p>
+   </div>
+   
+</div>
+
+
+	
+	
+	
+	
+	
+    </body>
+    </html>
